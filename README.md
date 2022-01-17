@@ -72,10 +72,10 @@ Questions:
 
 # Technologies: 
 
-a. Windows Operating System
-b. Online SQLite / Microsoft Visual Studio Code 1.6.3
-c. MySQL 8.0.26
-d. TABLEAU 20.4.2463
+1. Windows Operating System
+2. Online SQLite / Microsoft Visual Studio Code 1.6.3
+3. MySQL 8.0.26
+4. TABLEAU 20.4.2463
 
 [Initially, Online SQLite was used to open the 'db' file, but in finding another possible way to open the 'db' file, curiosity led us to Microsoft Visual Studio Code.
 We have to upload the 'challenge_db' file in the programme and download all files in '.txt' format in both applications.]
