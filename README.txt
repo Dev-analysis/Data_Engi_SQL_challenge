@@ -1,9 +1,9 @@
-## Data Quality Engineer Challenge
+# Data Quality Engineer Challenge
 
 Welcome to the Data Quality Engineer Challenge! This challenge was created by HAMS to evaluate the ability to analyse the data in the associated database and identify any data quality issues. HERE.
 Here you can find probable solutions to the author's questions as well as problems that I encountered during the process.
 
-## Introduction:
+# Introduction:
 
 Here we are going to analyse the data in the database file challenge.db file. This is a Zipped SQLite database with the following schema.
 The data belongs to a company called Company X and contains information of e-commerce purchases that were made with Company X. Each purchase (in 'conversions' table) has a certain revenue attached to it and was made by a given user ('user_id'). In the 'session_souces' table you can find information of what sessions (a session is a set of events) happened on the company's website. Every user who made a conversion, had multiple sessions prior to this purchase which make up his customer journey. The link between conversions and those sessions is made via the 'attribution_customer_journey' table where for each conv_id from the 'conversions' table, you can find all sessions that belong to this customer journey.
@@ -52,7 +52,7 @@ o	ihc: 'value' of the given session in the given customer journey (1 = 100%)
 Note: the sum of 'ihc' column in the 'attribution_customer_journey' should be equal to 1 (100%) for each 'conv_id'
 
 
-## AIM:
+# AIM:
 
 I.	Our primary aim is to find a potential answer to the author's question. 
   	Questions: 
@@ -68,7 +68,7 @@ II.	What challenges can be faced as a beginner?
 2.	Load the TEXT files into MySQL.
 
 
-## Technologies: 
+# Technologies: 
 
 I.	Windows Operating System
 II.	Online SQLite / Microsoft Visual Studio Code 1.6.3
@@ -79,7 +79,7 @@ IV.	TABLEAU 20.4.2463
 We have to upload the 'challenge_db' file in the programme and download all files in '.txt' format in both applications.]
 
 
-## Files in Repository:
+# Files in Repository:
 
 There are three folders in addition to the "schema" and 
 "challenge DB" files:
