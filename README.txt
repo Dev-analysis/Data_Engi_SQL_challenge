@@ -14,7 +14,7 @@ Often there are external data sources (for instance for marketing costs) that co
 
 Tables in the challenge.db file
 
-•	session_sources:
+• session_sources:
 o	session_id: unique identifier of this session
 o	user_id: user identifier
 o	event_date: date when the session happened
@@ -25,47 +25,47 @@ o	campaign_id: campaign identifier that started this session (not all sessions h
 o	market: regional market that this session belongs to (e.g. 'DE' for Germany)
 o	cpc: cost-per-click of this (this is how much was paid for this session, you can assume its in Euro)
 
-•	conversions:
+• conversions:
 o	conv_id: unique identifier of this conversion
 o	user_id: user identifier
 o	conv_date: date when the conversion happened
 o	market: regional market that this conversion belongs to
-o	revenue: conversion amount (i.e. how much revenue the company earned through this conversion, you can assume its in Euro)
+o	revenue: conversion amount (i.e. how much revenue the company earned through this conversion, you can assume                  its in Euro)
 
-•	conversions_backend :
+• conversions_backend :
 o	conv_id: unique identifier of this conversion
 o	user_id: user identifier
 o	conv_date: date when the conversion happened
 o	market: regional market that this conversion belongs to
 o	revenue: conversion amount
 
-•	api_adwords_costs :
+• api_adwords_costs :
 o	event_date: date when the AdWords campaign was running
 o	campaign_id: campaign identifier
 o	cost: amount that was spent on running this campaign on this day (assume its in Euro)
 o	clicks: number of times a user clicked on this ad on the given day
 
-•	attribution_customer_journey :
+• attribution_customer_journey :
 o	conv_id: conversion identifier
 o	session_id: session identifier that belonged in the customer journey of the given conv_id
 o	ihc: 'value' of the given session in the given customer journey (1 = 100%)
-Note: the sum of 'ihc' column in the 'attribution_customer_journey' should be equal to 1 (100%) for each 'conv_id'
+  Note: the sum of 'ihc' column in the 'attribution_customer_journey' should be equal to 1 (100%) for each 'conv_id'
 
 
 # AIM:
 
 I.	Our primary aim is to find a potential answer to the author's question. 
   	Questions: 
-1.	Are the costs in the 'api_adwords_costs' table fully covered in the 'session_sources' table? Any campaigns where you see issues?
-2.	Are the conversions in the 'conversions' table stable over time? Any pattern?
-3.	Double check conversions ('conversions' table) with backend ('conversions_backend' table), any issues?
-4.	Are attribution results consistent? Do you find any conversions where the 'ihc' values don't make sense?
-5.	(Bonus) Do we have an issue with channelling? Are the number of sessions per channel stable over time?
-6.	(Bonus) Any other issues?
+	1.	Are the costs in the 'api_adwords_costs' table fully covered in the 'session_sources' table? Any 		campaigns where you see issues?
+	2.	Are the conversions in the 'conversions' table stable over time? Any pattern?
+ 	3.	Double check conversions ('conversions' table) with backend ('conversions_backend' table), any 		issues?
+	4.	Are attribution results consistent? Do you find any conversions where the 'ihc' values don't make 		sense?
+	5.	(Bonus) Do we have an issue with channelling? Are the number of sessions per channel stable over 		time?
+	6.	(Bonus) Any other issues?
 
 II.	What challenges can be faced as a beginner?
-1.	How to open 'DB' file (windows).
-2.	Load the TEXT files into MySQL.
+	1.	How to open 'DB' file (windows).
+	2.	Load the TEXT files into MySQL.
 
 
 # Technologies: 
@@ -81,21 +81,19 @@ We have to upload the 'challenge_db' file in the programme and download all file
 
 # Files in Repository:
 
-There are three folders in addition to the "schema" and 
-"challenge DB" files:
+There are three folders in addition to the "schema" and "challenge DB" files:
 
-1.	Primary steps: 
+1. Primary steps: 
+	a.	Load_data file: After opening files in ".txt," the next step is to load data into MySQL.
 
-a.	Load_data file: After opening files in ".txt," the next step is to load data into MySQL.
+	b.	Verification: This file contains all SQL queries related to the challenger's statement in the primary 		data introduction. The aim is to cross-check the statement. This stage confirms that we are dealing 		with the same data that the challenger has provided, and it also helps us to create a better 		understanding of the data and become more familiar with it.
 
-b.	Verification: This file contains all SQL queries related to the challenger's statement in the primary data introduction. The aim is to cross-check the statement. This stage confirms that we are dealing with the same data that the challenger has provided, and it also helps us to create a better understanding of the data and become more familiar with it.
+2. Answers: All potential Answers to the challenger's questions can be found here.
 
-2.	Answers:
-All potential Answers to the challenger's questions can be found here.
+	Structure of Answer: The main query is preceded by other queries, which is helpful for understanding the data 	and also a crucial part of the process.
 
-Structure of Answer: The main query is preceded by other queries, which is helpful for understanding the data and also a crucial part of the process.
+3. Other: 
+	structuring.sql file: Here, we can find a query related to modification(*optional). In original file. if 	noticed primary and foreign keys are prefixed by their column names i.e. conv_id_16788, conv_id_8443, 	user_id_569581, user_id_62541 etc. After dealing with data.
+	[It is acceptable to prefix the primary key's entries with their column names; it doesn't encroach on the 	properties of the primary key. [Where apart from the prefixed word, the rest of the words follow the Primary 	Key rules.] LINK
 
-3.	Other: 
-structuring.sql file: Here, we can find a query related to modification(*optional). In original file. if noticed primary and foreign keys are prefixed by their column names i.e. conv_id_16788, conv_id_8443, user_id_569581, user_id_62541 etc. After dealing with data.
-[It is acceptable to prefix the primary key's entries with their column names; it doesn't encroach on the properties of the primary key. [Where apart from the prefixed word, the rest of the words follow the Primary Key rules.] LINK
-If one wants to remove entries with their prefixed "column name", The SQL query can be found in the structuring.sql file.
+	If one wants to remove entries with their prefixed "column name", The SQL query can be found in the 		structuring.sql file.
